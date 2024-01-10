@@ -3,7 +3,7 @@
   "version": "0.0.1-SNAPSHOT",
   "description": "",
   "type": "module",
-  "main": "dist/khufu-ui-esm.js",
+  "main": "dist/khufu-ui.esm.js",
   "scripts": {
     "dev": "rollup -c",
     "build": "npm run clean && npm run build:esm && npm run build:umd",
@@ -13,6 +13,10 @@
   },
   "author": "",
   "license": "ISC",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "browserslist": [
     "defaults",
     "not ie < 11",
