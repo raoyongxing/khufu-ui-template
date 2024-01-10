@@ -1,6 +1,8 @@
 import demo from './demo.vue'
 
 
-export default function(Vue) {
+demo.install = (Vue) => {
     Vue.component(demo.name, demo)
 }
+
+export default demo
