@@ -10,16 +10,16 @@ export default {
     input: './src/index.js',
     output: [
         {
-            file: './dist/khufu-ui-umd.js',  // 支持umd的引入
+            file: './dist/khufu-ui.umd.js',  // 支持umd的引入
             format: 'umd',
             name: 'khufu-ui-lib'
         },
         {
-            file: './dist/khufu-ui-es.js',  // 支持es的引入
+            file: './dist/khufu-ui.esm.js',  // 支持es的引入
             format: 'es', 
         },
         {
-            file: './dist/khufu-ui-cjs.js',  // 支持cmd的引入
+            file: './dist/khufu-ui.cjs.js',  // 支持cmd的引入
             format: 'cjs', 
         }
     ],
