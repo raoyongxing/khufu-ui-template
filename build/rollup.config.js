@@ -3,10 +3,11 @@ import postcss from 'rollup-plugin-postcss'   // css, less, scss 的转换和压
 import postcssImport from 'postcss-import'   // 处理css的@import
 import autoprefixer from 'autoprefixer'  // 增加各个浏览器的前缀
 import cssnano from 'cssnano'  // 对抽离的css文件压缩
-import vue from 'rollup-plugin-vue'   // 增加对vue2的支持,暂不支持vue3
 import { terser } from 'rollup-plugin-terser'  // 输出代码压缩
+import resolve from 'rollup-plugin-node-resolve'  // 解析node_modules中的模块
+import commonjs from 'rollup-plugin-commonjs'  // 转换commonjs模块
 
-const name = 'khufu-ui'
+const name = 'khufu-file-preview'
 const file = type => `dist/${name}.${type}.js`;
 
 export { name, file }
@@ -19,7 +20,8 @@ export default {
         format: 'es'
     },
     plugins: [
-        vue(),
+        resolve(),  // 解析node_modules中的模块
+        commonjs(),  // 转换commonjs模块
         babel({ exclude: 'node_modules/**' }),  // 语法转换到低版本
         postcss({
             plugins: [
@@ -31,5 +33,4 @@ export default {
         }),
         terser()
     ],
-    external: [ 'vue' ]  // 本组件库依赖于vue,引用本组件库先引入vue
 }

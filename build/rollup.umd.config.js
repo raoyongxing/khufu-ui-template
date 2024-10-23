@@ -6,7 +6,6 @@ export default {
     file: file('umd'),
     format: 'umd',
     globals: {
-      'vue': 'Vue',
       'lodash-es': '_'
     },
     exports: 'named'
